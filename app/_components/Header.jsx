@@ -1,11 +1,16 @@
+"use client";
+import React from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import {
+    RegisterLink,
+    LoginLink,
+} from "@kinde-oss/kinde-auth-nextjs/components";
 
-const Header = () => {
+function Header() {
     return (
         <div>
-            <div className="flex justify-between items-center p-4">
+            <div className="flex justify-between items-center p-4 shadow-md">
                 <Image
                     className="w-[70px] md:w-[100px]"
                     width={70}
@@ -13,6 +18,7 @@ const Header = () => {
                     alt="logo"
                     src="/logo.png"
                 />
+
                 <ul className=" hidden text-[#039C96] font-bold  md:flex gap-14">
                     <li className="hover:bg-[#d0efee] transition-all duration-300 p-2 cursor-pointer">
                         Product
@@ -27,17 +33,25 @@ const Header = () => {
                         Contact Us
                     </li>
                 </ul>
-                <div className="">
-                    <Button className="bg-[#039C96] mr-3 cursor-pointer">
-                        Login
-                    </Button>
-                    <Button className="bg-[#FEBF2F] cursor-pointer">
-                        Get Started
-                    </Button>
+
+                <div>
+                    <LoginLink>
+                        {" "}
+                        <Button className="bg-[#039C96] mr-3 cursor-pointer">
+                            Login
+                        </Button>
+                    </LoginLink>
+
+                    <RegisterLink>
+                        {" "}
+                        <Button className="bg-[#FEBF2F] cursor-pointer">
+                            Get Started
+                        </Button>
+                    </RegisterLink>
                 </div>
             </div>
         </div>
     );
-};
+}
 
 export default Header;
