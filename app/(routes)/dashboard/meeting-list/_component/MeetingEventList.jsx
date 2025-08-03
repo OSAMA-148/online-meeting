@@ -59,7 +59,7 @@ function MeetingEventList({ setSearchTerm, searchTerm }) {
     };
 
     const getMeetingInfo = async () => {
-        const docRef = doc(db, "Meeting", user?.email);
+        const docRef = doc(db, "meeting", user?.email);
         const docSnap = await getDoc(docRef);
         setMeetingList(docSnap.data());
     };

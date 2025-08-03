@@ -1,6 +1,15 @@
 "use client";
 import { Input } from "@/components/ui/input";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { app } from "../confing/FirebaseConfing";
+import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
+import {
+    collection,
+    query,
+    where,
+    getDocs,
+    getFirestore,
+} from "firebase/firestore";
 import MeetingEventList from "./_component/MeetingEventList";
 
 function MeetingType() {

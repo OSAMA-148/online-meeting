@@ -1,8 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { Clock, MapPin } from "lucide-react";
-import Link from "next/link";
 import { Calendar } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
 
@@ -32,7 +30,7 @@ function PreviewMeeting({ formValue }) {
         console.log(slots);
     };
     return (
-        <div className="p-7 shadow-md m-5">
+        <div className="p-7 shadow-md   m-5">
             <Image width={150} height={150} src="/logo.png" />
 
             <div className="grid grid-cols-1 md:grid-cols-3">
